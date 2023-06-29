@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 메인 화면 폰트 */
+@font-face {
+  font-family: "Staatliches";
+  src: url("../font/Staatliches-Regular.ttf");
+}
+
+@font-face {
+  font-family: "BowlbyOneSC";
+  src: url("../font/BowlbyOneSC-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Cormorant";
+  src: url("../font/Cormorant-Italic.ttf");
+}
+
+@font-face {
+  font-family: "Nabla";
+  src: url("../font/Nabla-Regular.ttf");
+}
+
+body {
+  --black: #000000;
+  --ash-black: #222;
+  --white: #fafafa;
+  --sky: #00ccff;
+  --green: #22dddd;
+  --blue: #1300ff;
+  --dusk: #6600ff;
+  --purple: #9900ff;
+  --pink: #ff0066;
+  --red: #fe0222;
+  --orange: #fd7702;
+  --yellow: #ffbb00;
+
+  --background: var(--ash-black);
+  --accent: var(--white);
+
+  margin: 0;
+  padding: 0;
+  color: var(--accent);
+}
+
+code {
+  font-family: input-mono, monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--background);
+}
+
+html {
+  scroll-snap-type: y mandatory;
+}

@@ -1,5 +1,14 @@
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import Main from "./pages/main";
+
 function App() {
-  return <div className="App"></div>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
