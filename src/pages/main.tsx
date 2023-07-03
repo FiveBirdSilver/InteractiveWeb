@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useSpring, useTransform, MotionValue } from "framer-motion";
 // import Stack from "../componet/stack";
-
 interface DataProps {
   title?: string;
   image: string;
@@ -29,10 +28,10 @@ export default function Main() {
 
     return (
       <div
+        ref={ref}
         style={{ backgroundImage: `url(${require(`../asset/image/${image}.jpg`)})` }}
-        className="relative flex items-center justify-center h-screen snap-center"
+        className="relative flex justify-center h-screen snap-center"
       >
-        <div ref={ref}></div>
         <motion.h1 style={{ y }} className="text-main font-['Cormorant']">
           {title}
         </motion.h1>
@@ -46,9 +45,9 @@ export default function Main() {
       <div
         ref={ref}
         style={{ backgroundImage: `url(${require(`../asset/image/Project_bg_2.jpg`)})` }}
-        className="relative flex items-center justify-center h-screen snap-center"
+        className="relative flex justify-center h-screen snap-center"
       >
-        <div className="flex items-center justify-center "></div>
+        <div className="flex items-center justify-center ">{/* <Stack /> */}</div>
       </div>
       <motion.div className="fixed left-0 right-0 h-1 bg-white bottom-10" style={{ scaleX }} />
     </>
