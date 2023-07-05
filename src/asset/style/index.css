@@ -4,8 +4,8 @@
 
 /* 메인 화면 폰트 */
 @font-face {
-  font-family: "Staatliches";
-  src: url("../font/Staatliches-Regular.ttf");
+  font-family: "Aboreto";
+  src: url("../font/Aboreto-Regular.ttf");
 }
 
 @font-face {
@@ -45,12 +45,6 @@ body {
   color: var(--accent);
 }
 
-code {
-  font-family: input-mono, monospace;
-  font-weight: 400;
-  font-style: normal;
-}
-
 ::-webkit-scrollbar {
   height: 5px;
   width: 5px;
@@ -68,123 +62,4 @@ code {
 
 html {
   scroll-snap-type: y mandatory;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-html,
-body,
-#root {
-  margin: 0;
-  padding: 0;
-  background-color: white;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
-    segoe ui, arial, sans-serif;
-}
-
-.padding-block {
-  display: flex;
-  text-align: center;
-  font-size: 5vmax;
-  justify-content: center;
-  align-items: center;
-  background-color: #efefef;
-  color: #333;
-}
-
-.scroll-carousel {
-  background-color: #fff;
-}
-
-.sticky-box {
-  position: sticky;
-  top: 0;
-  overflow: hidden;
-}
-
-.transform-box {
-  display: flex;
-  will-change: transform;
-}
-
-.box {
-  flex-shrink: 0;
-  /* need to hardcode box sizes, else images loading throws off calculations */
-  /* could be a job for imagesLoaded */
-  width: 70rem;
-  height: 100vh;
-  margin: 0 2rem;
-}
-
-.box--narrower {
-  width: 20rem;
-}
-
-.img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ------------------------------------------------------------ */
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-html,
-body,
-#root {
-  margin: 0;
-  padding: 0;
-  background-color: white;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
-    segoe ui, arial, sans-serif;
-}
-
-.padding-block {
-  display: flex;
-  text-align: center;
-  font-size: 5vmax;
-  justify-content: center;
-  align-items: center;
-  background-color: #efefef;
-  color: #333;
-}
-
-.scroll-carousel {
-  background-color: #fff;
-}
-
-.sticky-box {
-  position: sticky;
-  top: 0;
-  overflow: hidden;
-}
-
-.transform-box {
-  display: flex;
-  will-change: transform;
-}
-
-.box {
-  flex-shrink: 0;
-  /* need to hardcode box sizes, else images loading throws off calculations */
-  /* could be a job for imagesLoaded */
-  width: 70rem;
-  height: 100vh;
-  margin: 0 2rem;
-}
-
-.box--narrower {
-  width: 20rem;
 }

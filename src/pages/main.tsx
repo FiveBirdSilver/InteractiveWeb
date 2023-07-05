@@ -12,6 +12,21 @@ export default function Main() {
     restDelta: 0.001,
   });
 
+  const TechStack = [
+    "javascript",
+    "typescript",
+    "react",
+    "node",
+    "nextjs",
+    "html",
+    "css",
+    "scss",
+    "tailwind",
+    "nginx",
+    "gitlabrunner",
+    "github",
+    "reactquery",
+  ];
   // function useParallax(value: MotionValue<number>, distance: number) {
   //   return useTransform(value, [0, 1], [-distance, distance]);
   // }
@@ -35,23 +50,26 @@ export default function Main() {
   //   );
   // }
   return (
-    <div className="snap-y snap-mandatory">
+    <div>
       <div
         ref={ref}
-        style={{ backgroundImage: `url(${require(`../asset/image/Project_bg_1.jpg`)})` }}
+        style={{ backgroundImage: `url(${require(`../asset/images/Project_bg_1.jpg`)})` }}
         className="relative flex items-center justify-center h-screen snap-start"
       >
-        <h1 className="text-main font-['Cormorant']">FIVEBIRDSILVER</h1>
+        <h1 className="text-main text-zinc-100 font-['Cormorant']">FIVEBIRDSILVER</h1>
       </div>
-      <div className="relative w-full min-h-screen bg-black snap-center">
-        <HorizontalCarousel />
+      <div
+        className="relative w-full min-h-screen snap-start"
+        style={{ backgroundImage: `url(${require(`../asset/images/Project_bg_2.jpg`)})` }}
+      >
+        <HorizontalCarousel data={TechStack} />
       </div>
       <div
         ref={ref}
-        style={{ backgroundImage: `url(${require(`../asset/image/Project_bg_2.jpg`)})` }}
+        style={{ backgroundImage: `url(${require(`../asset/images/Project_bg_2.jpg`)})` }}
         className="relative flex justify-center h-screen snap-start"
       ></div>
-      <motion.div className="fixed left-0 right-0 h-1 bg-white bottom-10" style={{ scaleX }} />
+      <motion.div className="fixed left-0 right-0 h-1 bg-zinc-100 bottom-10" style={{ scaleX }} />
     </div>
   );
 }

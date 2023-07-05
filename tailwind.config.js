@@ -2,6 +2,9 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    // colors: {
+    //   main_white: "rgb(244 244 245)",
+    // },
     container: {
       center: true,
       screens: {
