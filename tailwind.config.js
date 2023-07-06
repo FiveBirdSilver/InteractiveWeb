@@ -3,8 +3,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     // colors: {
-    //   main_white: "rgb(244 244 245)",
+    //   beige: "#dbdad4",
     // },
+
     container: {
       center: true,
       screens: {
@@ -17,6 +18,9 @@ module.exports = {
     extend: {
       fontSize: {
         main: "12rem",
+      },
+      colors: {
+        mainYellow: "#fffd13",
       },
     },
   },

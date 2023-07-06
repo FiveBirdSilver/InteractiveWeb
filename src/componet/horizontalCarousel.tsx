@@ -38,17 +38,20 @@ function HorizontalCarousel(props: Props) {
   }, []);
 
   return (
-    <div style={{ height: `${dynamicHeight}px` }} className="relative w-full">
+    <div style={{ height: `${dynamicHeight * 1.1}px` }} className="relative w-full">
       <div className="sticky top-0 w-full h-screen overflow-x-hidden" ref={containerRef}>
         <div
           style={{ transform: `translateX(${translateX}px)` }}
           className="absolute h-full will-change-transform"
           ref={objectRef}
         >
-          <div className="relative h-full pl-[100px] flex justify-start items-center">
+          <div className="fixed w-full bg-black h-3/5">
+            <h1 className="stack_title">STACKS</h1>
+          </div>
+          <div className="relative flex items-end justify-start h-full pb-10 pl-24">
             {data.map((name, index) => (
-              <div className="w-[300px] p-2 bg-zinc-50 mr-[35px]" key={index}>
-                <img src={require(`../asset/images/${name}.png`)} className="rounded-xl" />
+              <div className="project_container" key={index}>
+                <img src={require(`../asset/images/stacks/${name}.png`)} className="w-full rounded-xl" />
                 <p className="text-zinc-950 font-extrabold text-center text-3xl font-['Aboreto'] mt-6 mb-1ss">{name}</p>
               </div>
             ))}
@@ -58,7 +61,5 @@ function HorizontalCarousel(props: Props) {
     </div>
   );
 }
-
-// #fffd13
 
 export default HorizontalCarousel;
