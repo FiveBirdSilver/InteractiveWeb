@@ -19,8 +19,18 @@
 }
 
 @font-face {
-  font-family: "Nabla";
-  src: url("../font/Nabla-Regular.ttf");
+  font-family: "Antiga";
+  src: url("../font/Antiga-Regular.ttf");
+}
+
+@font-face {
+  font-family: "JazminAlt";
+  src: url("../font/JazminAlt-Medium.otf");
+}
+
+@font-face {
+  font-family: "watermelonSalad";
+  src: url("../font/EF_watermelonSalad.otf");
 }
 
 body {
@@ -32,10 +42,11 @@ body {
   --blue: #1300ff;
   --dusk: #6600ff;
   --purple: #9900ff;
-  --pink: #ff0066;
+  --pink: #e0d3cb;
   --red: #fe0222;
   --orange: #fd7702;
   --yellow: #ffbb00;
+  --beige: #ffe0c5;
 
   --background: var(--ash-black);
   --accent: var(--white);
@@ -61,7 +72,6 @@ body {
 }
 
 html {
-  background-color: black;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
@@ -75,7 +85,7 @@ p {
 }
 
 /* 프로젝트 컨테이너 반투명 CSS */
-.project_container {
+.stacks_container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,15 +96,16 @@ p {
   box-shadow: 0 6px 20px -15px #000;
   border-style: solid #fff 1px;
   margin: 20px;
-  padding: 10px;
+  padding: 20px 30px;
 }
+
 .stack_title {
-  position: absolute;
-  font-family: "Aboreto";
-  --stroke-color: #fffd13;
-  --stroke-width: 1px;
-  color: black;
-  font-size: 72px;
+  font-family: "JazminAlt";
+  --stroke-color: #ff6c89;
+  --stroke-width: 5px;
+  color: var(--beige);
+  font-size: 520px;
+  font-weight: bold;
   text-shadow: var(--stroke-width) 0 0 var(--stroke-color), calc(var(--stroke-width) * -1) 0 0 var(--stroke-color),
     0 var(--stroke-width) 0 var(--stroke-color), 0 calc(var(--stroke-width) * -1) 0 var(--stroke-color);
 }

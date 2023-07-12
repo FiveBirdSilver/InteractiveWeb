@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import HorizontalCarousel from "../componet/horizontalCarousel";
+import StacksContainer from "../componet/stacksContainer";
 
 export default function Main() {
   const { scrollYProgress } = useScroll();
@@ -12,21 +13,9 @@ export default function Main() {
     restDelta: 0.001,
   });
 
-  const TechStack = [
-    "javascript",
-    "typescript",
-    "react",
-    "node",
-    "nextjs",
-    "html",
-    "css",
-    "scss",
-    "tailwind",
-    "nginx",
-    "gitlabrunner",
-    "github",
-    "reactquery",
-  ];
+  const TechStack = ["javascript", "typescript", "html", "react", "nextjs"];
+  const TechStack_2 = ["node", "nginx", "gitlabrunner", "github"];
+  const TechStack_3 = ["reactquery", "css", "scss", "tailwind"];
 
   const Projects = [
     {
@@ -73,6 +62,9 @@ export default function Main() {
     },
   ];
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   // function useParallax(value: MotionValue<number>, distance: number) {
   //   return useTransform(value, [0, 1], [-distance, distance]);
   // }
@@ -99,23 +91,36 @@ export default function Main() {
     <>
       <div
         ref={ref}
-        style={{ backgroundImage: `url(${require(`../asset/images/Project_bg_1.jpg`)})` }}
-        className="relative flex items-center justify-center h-screen snap-start "
+        // style={{ backgroundImage: `url(${require(`../asset/images/Project_bg_1.jpg`)})` }}
+        className="relative flex items-center justify-center h-screen snap-start bg-bgGreen"
       >
-        <h1 className="text-main text-zinc-100 font-['Cormorant']">FIVEBIRDSILVER</h1>
-      </div>
-      <div
-        className="relative w-full min-h-screen snap-start"
-        // style={{ backgroundImage: `url(${require(`../asset/images/Project_bg_2.jpg`)})` }}
-      >
-        <HorizontalCarousel data={TechStack} />
+        <h1 className="text-main text-zinc-900 font-['Cormorant']">FIVEBIRDSILVER</h1>
       </div>
       <div
         ref={ref}
-        style={{ backgroundImage: `url(${require(`../asset/images/Project_bg_2.jpg`)})` }}
-        className="relative flex justify-center h-screen snap-start"
+        className="relative flex flex-col items-center justify-center w-full h-screen pr-24 snap-start bg-bgBeige"
       ></div>
-      <motion.div className="fixed left-0 right-0 h-1 bg-zinc-100 bottom-10" style={{ scaleX }} />
+      <div
+        ref={ref}
+        className="relative flex flex-col items-center justify-center w-full min-h-screen snap-start bg-bgBeige"
+      >
+        <h1 className="stack_title">STACKS</h1>
+        <StacksContainer data={TechStack} arrange="flex-start" />
+        <StacksContainer data={TechStack_2} arrange="flex-end" />
+        <StacksContainer data={TechStack_3} arrange="flex-start" />
+        <h2 className="stack_title" style={{ fontSize: "300px" }}>
+          *
+        </h2>
+      </div>
+      <div className="relative w-full min-h-screen snap-start bg-bgPink">
+        <HorizontalCarousel data={Projects} />
+      </div>
+      <div
+        ref={ref}
+        style={{ backgroundImage: `url(${require(`../asset/images/Project_bg_1.jpg`)})` }}
+        className="relative flex items-center justify-center h-screen snap-start bg-bgGreen"
+      ></div>
+      <motion.div className="fixed left-0 right-0 h-1 bg-zinc-900 bottom-10" style={{ scaleX }} />
     </>
   );
 }

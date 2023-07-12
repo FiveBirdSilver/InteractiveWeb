@@ -1,7 +1,14 @@
 import { useState, useEffect, useRef } from "react";
+import Tags from "./stacksTag";
 
 interface Props {
-  data: string[];
+  data: {
+    name: string;
+    content: string;
+    link: string;
+    stack: string[];
+    image: string;
+  }[];
 }
 
 function HorizontalCarousel(props: Props) {
@@ -32,27 +39,34 @@ function HorizontalCarousel(props: Props) {
   };
 
   useEffect(() => {
-    // window.scrollTo(0, 0);
     handleDynamicHeight(objectRef);
     applyScrollListener(containerRef);
   }, []);
 
   return (
-    <div style={{ height: `${dynamicHeight * 1.1}px` }} className="relative w-full">
-      <div className="sticky top-0 w-full h-screen overflow-x-hidden" ref={containerRef}>
+    <div style={{ height: `${dynamicHeight}px` }} className="relative w-full ">
+      <div className="sticky top-0 w-full h-screen overflow-x-hidden " ref={containerRef}>
         <div
           style={{ transform: `translateX(${translateX}px)` }}
-          className="absolute h-full will-change-transform"
+          className="absolute h-full will-change-transform "
           ref={objectRef}
         >
-          <div className="fixed w-full bg-black h-3/5">
-            <h1 className="stack_title">STACKS</h1>
-          </div>
-          <div className="relative flex items-end justify-start h-full pb-10 pl-24">
-            {data.map((name, index) => (
-              <div className="project_container" key={index}>
-                <img src={require(`../asset/images/stacks/${name}.png`)} className="w-full rounded-xl" />
-                <p className="text-zinc-950 font-extrabold text-center text-3xl font-['Aboreto'] mt-6 mb-1ss">{name}</p>
+          <div className="relative flex items-center justify-start h-full ">
+            {data.map((v, index) => (
+              <div
+                className="flex items-center justify-center w-screen h-screen pr-12 border-r-[1px] border-neutral-400"
+                key={index}
+              >
+                <div className="flex h-2/3">
+                  <img src={require(`../asset/images/projects/${v.image}.png`)} className="w-full" />
+                </div>
+                <div className="flex flex-col h-2/3 w-[600px] gap-10">
+                  <h1 className="text-zinc-950 text-start font-extrabold text-7xl font-['watermelonSalad'] mt-6 mb-1">
+                    {v.name}
+                  </h1>
+                  <p className="text-zinc-950 text-start text-3xl font-['watermelonSalad'] mt-6 mb-1">{v.content}</p>
+                  <Tags tag={v.stack} />
+                </div>
               </div>
             ))}
           </div>
@@ -61,5 +75,8 @@ function HorizontalCarousel(props: Props) {
     </div>
   );
 }
+
+// #fffd13
+// relative h-full pl-[100px] flex justify-start items-center
 
 export default HorizontalCarousel;

@@ -20,7 +20,11 @@ module.exports = {
         main: "12rem",
       },
       colors: {
-        mainYellow: "#fffd13",
+        textYellow: "#fffd13",
+        textPink: "#ff6c89",
+        bgPink: "#e0d3cb",
+        bgBeige: "#ffe0c5",
+        bgGreen: "#475a51",
       },
     },
   },
